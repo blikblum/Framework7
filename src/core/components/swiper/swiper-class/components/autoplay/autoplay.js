@@ -72,7 +72,6 @@ const Autoplay = {
       swiper.autoplay.run();
     } else {
       swiper.$wrapperEl[0].addEventListener('transitionend', swiper.autoplay.onTransitionEnd);
-      swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.autoplay.onTransitionEnd);
     }
   },
 };
@@ -103,7 +102,6 @@ export default {
           if (!swiper || swiper.destroyed || !swiper.$wrapperEl) return;
           if (e.target !== this) return;
           swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.autoplay.onTransitionEnd);
-          swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.autoplay.onTransitionEnd);
           swiper.autoplay.paused = false;
           if (!swiper.autoplay.running) {
             swiper.autoplay.stop();

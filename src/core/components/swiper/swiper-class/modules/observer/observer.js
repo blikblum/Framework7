@@ -3,7 +3,7 @@ import Utils from '../../utils/utils';
 import Support from '../../utils/support';
 
 const Observer = {
-  func: window.MutationObserver || window.WebkitMutationObserver,
+  func: window.MutationObserver,
   attach(target, options = {}) {
     const swiper = this;
 

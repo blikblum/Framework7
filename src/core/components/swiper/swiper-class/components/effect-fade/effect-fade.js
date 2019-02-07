@@ -35,10 +35,7 @@ const Fade = {
         if (!swiper || swiper.destroyed) return;
         eventTriggered = true;
         swiper.animating = false;
-        const triggerEvents = ['webkitTransitionEnd', 'transitionend'];
-        for (let i = 0; i < triggerEvents.length; i += 1) {
-          $wrapperEl.trigger(triggerEvents[i]);
-        }
+        $wrapperEl.trigger('transitionend');
       });
     }
   },

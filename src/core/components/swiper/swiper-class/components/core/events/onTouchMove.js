@@ -113,7 +113,7 @@ export default function (event) {
     data.startTranslate = swiper.getTranslate();
     swiper.setTransition(0);
     if (swiper.animating) {
-      swiper.$wrapperEl.trigger('webkitTransitionEnd transitionend');
+      swiper.$wrapperEl.trigger('transitionend');
     }
     data.allowMomentumBounce = false;
     // Grab Cursor

@@ -88,14 +88,12 @@ export default function (index = 0, speed = this.params.speed, runCallbacks = tr
           if (!swiper || swiper.destroyed) return;
           if (e.target !== this) return;
           swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
-          swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
           swiper.onSlideToWrapperTransitionEnd = null;
           delete swiper.onSlideToWrapperTransitionEnd;
           swiper.transitionEnd(runCallbacks, direction);
         };
       }
       swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
-      swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
     }
   }
 

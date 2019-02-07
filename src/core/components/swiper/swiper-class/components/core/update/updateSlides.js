@@ -108,12 +108,8 @@ export default function () {
     if (params.slidesPerView === 'auto') {
       const slideStyles = window.getComputedStyle(slide[0], null);
       const currentTransform = slide[0].style.transform;
-      const currentWebKitTransform = slide[0].style.webkitTransform;
       if (currentTransform) {
         slide[0].style.transform = 'none';
-      }
-      if (currentWebKitTransform) {
-        slide[0].style.webkitTransform = 'none';
       }
       if (params.roundLengths) {
         slideSize = swiper.isHorizontal()
@@ -149,9 +145,6 @@ export default function () {
       }
       if (currentTransform) {
         slide[0].style.transform = currentTransform;
-      }
-      if (currentWebKitTransform) {
-        slide[0].style.webkitTransform = currentWebKitTransform;
       }
       if (params.roundLengths) slideSize = Math.floor(slideSize);
     } else {
